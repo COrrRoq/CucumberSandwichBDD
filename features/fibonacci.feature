@@ -13,3 +13,19 @@ Feature: Fibonacci number sequences
     When the sequence is skipped 3 times
     Then the state should be "The current number is 8"
     And the next number should be 13
+
+
+  Scenario: Initialized with the lowest possible number
+    Given a fibonacci sequence initialized to 0
+    Then the next number should be 1
+
+
+  Scenario: Initialized and skipped then checked
+  Given a fibonacci sequence initialized to 34
+  When the sequence is skipped 4 times
+  Then the state should be 'the current number is 233'
+  And the next number should be 377
+
+  Scenario: Initialized to non-fibonacci number
+  Given a fibonacci sequence initialized to 9
+  Then it should throw an exception

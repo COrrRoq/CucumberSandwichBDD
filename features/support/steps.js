@@ -29,10 +29,22 @@ When("the sequence is skipped {int} time(s)", function(value) {
     this.fibonacci.skip(value);
 });
 
+When("a fibonacci sequence is initialized to {int}", function(value) {
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itThrew();
+    }
+});
+  
+
 Then("the next number should be {int}", function(value) {
     assert(this.fibonacci.next() == value);
 });
 
 Then("the state should be {string}", function(value) {
     assert(this.fibonacci.state() == value);
+});
+Then("it should throw an exception", function() {
+    assert(this.hasThrown());
 });
