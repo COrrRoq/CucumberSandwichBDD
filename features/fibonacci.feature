@@ -28,4 +28,5 @@ Feature: Fibonacci number sequences
 
   Scenario: Initialized to non-fibonacci number
   Given a fibonacci sequence initialized to 9
+  When a fibonacci sequence initialized to 9
   Then it should throw an exception
