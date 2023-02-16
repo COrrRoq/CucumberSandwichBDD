@@ -18,7 +18,11 @@ const {Given, When, Then} = require('@cucumber/cucumber');
 // ----------------------------------------------------------------------------
 
 Given("a fibonacci sequence initialized to {int}", function(value) {
-    this.fibonacci.init(value);
+    try {
+        this.fibonacci.init(value);
+    } catch {
+        this.itThrew();
+    }  
 });
 
 When("a fibonacci sequence is started", function() {

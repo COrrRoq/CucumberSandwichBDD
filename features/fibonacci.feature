@@ -21,12 +21,11 @@ Feature: Fibonacci number sequences
 
 
   Scenario: Initialized and skipped then checked
-  Given a fibonacci sequence initialized to 34
+  Given a fibonacci sequence initialized to 2
   When the sequence is skipped 4 times
-  Then the state should be 'the current number is 233'
-  And the next number should be 377
+  Then the state should be "The current number is 13"
+  And the next number should be 21
 
   Scenario: Initialized to non-fibonacci number
   Given a fibonacci sequence initialized to 9
-  When a fibonacci sequence initialized to 9
   Then it should throw an exception
